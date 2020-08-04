@@ -1,0 +1,24 @@
+<% if @project.errors.any? %> 
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">No se pudo agregar el proyecto</h4>
+        <p>Encontramos <%= pluralize(@project.errors.count, "Problema") %>
+         <%= link_to 'Volver a intentarlo', root_path, {class: 'alert-link'} %>
+         </p>
+        <hr>
+        <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+    
+<% else %>
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Proyecto creado con éxito!</h4>
+        <hr>
+        <p class="mb-0">Puedes encontrar la lista de todos tus proyectos desde el inicio. 
+            <%# <a href="/" class="alert-link"> Ver lista completa de proyectos </a> %>
+            <%= link_to 'Ver lista completa de proyectos', root_path, {class: 'alert-link'} %>
+        </p>
+    </div>
+<% end %>

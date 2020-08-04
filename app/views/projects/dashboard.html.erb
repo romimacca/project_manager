@@ -1,0 +1,42 @@
+<nav class="navbar navbar-light bg-light justify-content-between"> 
+    <a class="navbar-brand">Proyectos</a>
+    
+    <form class="form-inline ">
+        Filtrar Proyectos: 
+        <select name="state" class="custom-select mx-2">
+            <option value="">Filtra por un estado...</option>
+            <option value="0">Propuesta</option>
+            <option value="1">En progreso</option>
+            <option value="2">Terminado</option>
+        </select>
+        <button class="btn btn-outline-success" type="submit">Filtrar</button>
+         <%=  link_to 'Limpiar filtro', root_path, {class: 'btn btn-outline-secondary mx-2'} %>
+    </form>
+    <%=  link_to 'Crear Proyecto', projects_new_path, {class: 'btn btn-primary'} %>
+    
+</nav>
+
+<table class="table my-5">
+    <thead>
+        <tr>
+            <td> <b>Nombre</b></td>
+            <td> <b>Descripción</b></td>
+            <td> <b>Comienzo</b></td>
+            <td> <b>Termino</b></td>
+            <td> <b>Estado</b></td>
+        </tr>
+
+    </thead>
+    <% @projects.each do |project| %>
+        <tr>
+            <td><%= project.name %></td>
+            <td><%= project.description %></td>
+            <td><%= project.begin %></td>
+            <td><%= project.end %></td>
+            <td><%= project.state %></td>
+            <td></ts>
+        </tr>
+    <% end %>
+
+</table>
+

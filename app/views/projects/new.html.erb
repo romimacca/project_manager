@@ -1,0 +1,33 @@
+<h1>Crear nuevo proyecto</h1> 
+
+<form method="get" action="/projects/create">
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <input name="name" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea name="description" class="form-control"> </textarea>
+    </div>
+
+    <div class="form-group"> 
+        <label for="begin">Comienzo</label>
+        <input name="begin" type="date" class="form-control"> 
+    </div>
+
+     <div class="form-group"> 
+        <label for="end">Final</label>
+        <input name="end" type="date" class="form-control"> 
+    </div>
+    <div class="form-group"> 
+        <label for="state">Estado</label>
+        <select name="state" class="form-control">
+            <option value="Propuesta">Propuesta</option>
+            <option value="En progreso">En progreso</option>
+            <option value="Terminado">Terminado</option>
+        </select>
+    </div>
+        <button type="submit" class="btn btn-primary">Crear proyecto</button> 
+</form>
+
